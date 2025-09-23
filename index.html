@@ -10,6 +10,88 @@
       href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./styles/index.css" />
   </head>
-  <body></body>
+  <body>
+    <header>
+      <div>
+        <img src="./assets/icons/favicon.svg" alt="dog icon" />
+        <h2>Mundo pet</h2>
+      </div>
+    </header>
+
+    <main>
+      <section id="header">
+        <h1>Sua agenda</h1>
+        <p>
+          Aqui você pode ver todos os clientes e serviços agendados para hoje.
+        </p>
+
+        <div class="input">
+          <img src="./assets/icons/calendar.svg" alt="calendar icon" />
+          <input type="date" name="" id="" />
+          <img
+            src="./assets/icons/arrow-down.svg"
+            alt="arrow down icon"
+            title="see calendar"
+          />
+        </div>
+      </section>
+
+      <section id="appointments">
+        <div class="morning period">
+          <div class="period-header">
+            <img src="./assets/icons/sun-fog.svg" alt="sun fog icon" />
+            <h3>Manhã</h3>
+
+            <p>09h-12h</p>
+          </div>
+
+          <div class="period-appointments">
+            <div class="appointment">
+              <div>
+                <p class="time">13:00</p>
+                <p class="pet-name">Mel</p>
+                <span>/</span>
+                <span class="person-name">João Souza</span>
+              </div>
+              <span class="description">Corte de Unhas</span>
+              <a>Remover agendamento</a>
+            </div>
+
+            <div class="appointment">
+              <div>
+                <p class="time">13:00</p>
+                <p class="pet-name">Mel</p>
+                <span>/</span>
+                <span class="person-name">João Souza</span>
+              </div>
+              <span class="description">Corte de Unhas</span>
+              <a>Remover agendamento</a>
+            </div>
+          </div>
+        </div>
+        <div class="afternoon period">
+          <div class="period-header">
+            <img src="./assets/icons/cloud-sun.svg" alt="sun fog icon" />
+            <h3>Tarde</h3>
+
+            <p>13h-18h</p>
+          </div>
+        </div>
+        <div class="night period">
+          <div class="period-header">
+            <img src="./assets/icons/moon.svg" alt="sun fog icon" />
+            <h3>Noite</h3>
+
+            <p>19h-21h</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <button>Novo agendamento</button>
+    </footer>
+  </body>
 </html>

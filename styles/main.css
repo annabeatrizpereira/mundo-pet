@@ -1,0 +1,131 @@
+header {
+  & div {
+    background-color: #2e2c30;
+    width: fit-content;
+    border-bottom-right-radius: 1rem;
+
+    display: flex;
+    gap: 0.25rem;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0.5rem;
+
+    & h2 {
+      color: var(--content-brand);
+      font: var(--label-large);
+      text-transform: uppercase;
+    }
+  }
+}
+
+main {
+  flex: 1;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  & #header {
+    & h1 {
+      color: var(--content-primary);
+      font: var(--title);
+      margin-bottom: 0.25rem;
+    }
+
+    & p {
+      color: var(--content-secondary);
+      font: var(--paragraph-medium);
+      margin-bottom: 0.75rem;
+    }
+
+    & .input {
+      display: flex;
+      gap: 0.5rem;
+      width: fit-content;
+
+      & input {
+        background-color: transparent;
+        border: none;
+        font: var(--paragraph-medium);
+        color: var(--content-secondary);
+
+        outline: none;
+      }
+
+      & input[type="date"]::-webkit-calendar-picker-indicator {
+        display: none; /* esconde só o ícone */
+      }
+    }
+  }
+
+  & #appointments {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    & .period {
+      background-color: var(--background-tertiary);
+      border-radius: 0.625rem;
+
+      & .period-header {
+        padding: 0.75rem 1.25rem;
+        display: flex;
+        gap: 0.75rem;
+        border-bottom: 1px solid #2e2c30;
+
+        & h3 {
+          color: var(--content-primary);
+          font: var(--label-large);
+        }
+
+        & p {
+          color: var(--content-secondary);
+          font: var(--label-large);
+          margin-left: auto;
+        }
+      }
+
+      & .period-appointments {
+        padding: 1.25rem;
+
+        & .appointment {
+            padding: .75rem;
+            border-bottom: 1px solid #353339;
+
+          & div {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+
+            & p {
+              color: var(--content-primary);
+              font: var(--label-medium);
+            }
+          }
+
+          & span {
+            color: var(--content-secondary);
+            font: var(--paragraph-medium);
+          }
+
+          & a {
+            display: block;
+            text-align: end;
+          }
+        }
+
+        & .appointment:last-child {
+            border: none;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  margin-top: 2.75rem;
+  padding-block: 1.125rem;
+  background-color: var(--background-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
