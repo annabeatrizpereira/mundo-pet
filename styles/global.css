@@ -108,3 +108,13 @@ a:hover {
   color: var(--content-primary);
   outline: none;
 }
+
+/* display */
+.hidden {
+  display: none;
+}
+
+/* blur */
+.blur {
+  filter: blur(.3rem);
+}

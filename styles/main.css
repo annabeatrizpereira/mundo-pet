@@ -84,7 +84,23 @@ main {
         }
       }
 
+      & .no-appointments {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding-block: 1.5rem;
+
+        & span {
+          font: var(--label-small);
+          color: var(--content-tertiary);
+        }
+      }
+
       & .period-appointments {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
         padding: 1.25rem;
 
         & .appointment {

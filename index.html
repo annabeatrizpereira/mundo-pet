@@ -20,7 +20,7 @@
       </div>
     </header>
 
-    <main>
+    <main class="blur">
       <section id="header">
         <h1>Sua agenda</h1>
         <p>
@@ -69,6 +69,16 @@
               <span class="description">Corte de Unhas</span>
               <a>Remover agendamento</a>
             </div>
+            <div class="appointment">
+              <div>
+                <p class="time">13:00</p>
+                <p class="pet-name">Mel</p>
+                <span>/</span>
+                <span class="person-name">João Souza</span>
+              </div>
+              <span class="description">Corte de Unhas</span>
+              <a>Remover agendamento</a>
+            </div>
           </div>
         </div>
         <div class="afternoon period">
@@ -78,7 +88,21 @@
 
             <p>13h-18h</p>
           </div>
+
+          <div class="period-appointments">
+            <div class="appointment">
+              <div>
+                <p class="time">13:00</p>
+                <p class="pet-name">Mel</p>
+                <span>/</span>
+                <span class="person-name">João Souza</span>
+              </div>
+              <span class="description">Corte de Unhas</span>
+              <a>Remover agendamento</a>
+            </div>
+          </div>
         </div>
+
         <div class="night period">
           <div class="period-header">
             <img src="./assets/icons/moon.svg" alt="sun fog icon" />
@@ -86,9 +110,42 @@
 
             <p>19h-21h</p>
           </div>
+
+          <div class="no-appointments">
+            <span>Nenhum agendamento.</span>
+          </div>
         </div>
       </section>
     </main>
+
+    <div id="modal">
+      <div class="modal-content">
+        <a class="close-modal">
+          <img
+            src="./assets/icons/close.svg"
+            alt="close icon"
+            title="close modal"
+          />
+        </a>
+
+        <section>
+          <h2>Agende um atendimento</h2>
+          <p>Preencha os dados do cliente para realizar o agendamento:</p>
+        </section>
+
+        <form action="">
+          <fieldset>
+            <label for="tutor-name">
+              <p>Nome do tutor</p>
+              <input type="text" placeholder="Helena Souza" />
+              <img src="./assets/icons/user.svg" alt="user icon" />
+            </label>
+          </fieldset>
+
+          <button type="submit">Agendar</button>
+        </form>
+      </div>
+    </div>
 
     <footer>
       <button>Novo agendamento</button>
