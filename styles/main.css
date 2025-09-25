@@ -25,6 +25,33 @@ main {
   gap: 2rem;
 
   & #header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & div:nth-child(2) {
+      width: 11.5rem;
+      position: relative;
+
+      & input {
+        position: relative;
+        width: 100%;
+        padding: 0.75rem 0.75rem 0.75rem 2.75rem;
+      }
+
+      & img[src*="calendar"] {
+        position: absolute;
+        top: 0;
+        transform: translate(70%, 75%);
+      }
+
+      & img[src*="arrow"] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-40%, 75%);
+      }
+    }
+
     & h1 {
       color: var(--content-primary);
       font: var(--title);
@@ -35,21 +62,6 @@ main {
       color: var(--content-secondary);
       font: var(--paragraph-medium);
       margin-bottom: 0.75rem;
-    }
-
-    & .input {
-      display: flex;
-      gap: 0.5rem;
-      width: fit-content;
-
-      & input {
-        background-color: transparent;
-        border: none;
-        font: var(--paragraph-medium);
-        color: var(--content-secondary);
-
-        outline: none;
-      }
     }
   }
 
@@ -100,8 +112,8 @@ main {
         padding: 1.25rem;
 
         & .appointment {
-            padding: .75rem;
-            border-bottom: 1px solid #353339;
+          padding: 0.75rem;
+          border-bottom: 1px solid #353339;
 
           & div {
             display: flex;
@@ -126,7 +138,7 @@ main {
         }
 
         & .appointment:last-child {
-            border: none;
+          border: none;
         }
       }
     }
@@ -140,4 +152,33 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (width > 80rem) {
+  main {
+    width: 44rem;
+    padding: 0;
+    margin-inline: auto;
+
+    & #header {
+      display: flex;
+
+      & p {
+        text-wrap: nowrap;
+      }
+
+      & .input {
+        max-width: 10.75rem;
+
+        & img {
+        }
+      }
+    }
+  }
+
+  footer {
+    background-color: transparent;
+    padding: 2rem 1.875rem;
+    justify-content: end;
+  }
 }

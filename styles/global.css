@@ -113,8 +113,13 @@ textarea:focus {
   outline: none;
 }
 
-& input::-webkit-calendar-picker-indicator {
-  display: none; /* esconde só o ícone */
+/* input date and time */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  background: url("./../assets/icons/arrow-down.svg") no-repeat center; /* seu ícone */
+  background-size: 1.25rem 1.25rem;
+  filter: invert(#fff); /* para ajustar cor se precisar */
 }
 
 /* display */

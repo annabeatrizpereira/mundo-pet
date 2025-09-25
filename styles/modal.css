@@ -79,3 +79,12 @@
     }
   }
 }
+
+@media (width > 80rem){
+  #modal {
+    & .modal-content {
+      width: 30rem;
+      margin-inline: auto;
+    }
+  }
+}
