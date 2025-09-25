@@ -20,7 +20,7 @@
       </div>
     </header>
 
-    <main class="blur">
+    <main>
       <section id="header">
         <h1>Sua agenda</h1>
         <p>
@@ -118,15 +118,15 @@
       </section>
     </main>
 
-    <div id="modal">
+    <div id="modal" class="hidden">
       <div class="modal-content">
-        <a class="close-modal">
+        <button type="button" id="close-modal">
           <img
             src="./assets/icons/close.svg"
             alt="close icon"
             title="close modal"
           />
-        </a>
+        </button>
 
         <section>
           <h2>Agende um atendimento</h2>
@@ -137,18 +137,59 @@
           <fieldset>
             <label for="tutor-name">
               <p>Nome do tutor</p>
-              <input type="text" placeholder="Helena Souza" />
-              <img src="./assets/icons/user.svg" alt="user icon" />
+              <div>
+                <input type="text" placeholder="Helena Souza" name="tutor-name" />
+                <img src="./assets/icons/user.svg" alt="user icon" />
+              </div>
+            </label>
+
+            <label for="pet-name">
+              <p>Nome do pet</p>
+              <div>
+                <input type="text" placeholder="Cheddar" name="pet-name" />
+                <img src="./assets/icons/pet-paw.svg" alt="dog paw icon" />
+              </div>
+            </label>
+
+            <label for="tel">
+              <p>Telefone</p>
+              <div>
+                <input type="tel" placeholder="(00) 0 0000-0000" name="tel" />
+                <img src="./assets/icons/phone.svg" alt="phone icon" />
+              </div>
+            </label>
+
+            <label for="description">
+              <p>Descrição do serviço</p>
+              <textarea placeholder="Banho e tosa" name="description"></textarea>
+            </label>
+
+            <label for="date">
+              <p>Data</p>
+              <div>
+                <input type="date" placeholder="10/01/2025" name="date" />
+                <img src="./assets/icons/calendar.svg" alt="calendar icon" />
+              </div>
+            </label>
+
+            <label for="hour">
+              <p>Hora</p>
+              <div>
+                <input type="time" placeholder="12:00" name="hour" />
+                <img src="./assets/icons/clock.svg" alt="clock icon" />
+              </div>
             </label>
           </fieldset>
 
-          <button type="submit">Agendar</button>
+          <button type="submit" class="btn-purple">Agendar</button>
         </form>
       </div>
     </div>
 
     <footer>
-      <button>Novo agendamento</button>
+      <button class="btn-purple" id="open-modal">Novo agendamento</button>
     </footer>
+
+    <script src="./scripts.js"></script>
   </body>
 </html>

@@ -45,14 +45,14 @@
 }
 
 body {
-  background-color: #14151D;
+  background-color: #14151d;
   height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 /* button */
-button {
+.btn-purple {
   background-color: var(--content-brand);
   color: var(--background-primary);
   font: var(--label-large);
@@ -65,7 +65,7 @@ button {
   transition: background-color 300ms ease-in;
 }
 
-button:hover {
+.btn-purple:hover {
   background-color: var(--background-highlights);
 }
 
@@ -87,26 +87,34 @@ a:hover {
 }
 
 /* input, textarea */
-.input, textarea {
+input,
+textarea {
   border: 1px solid var(--border-primary);
   background-color: transparent;
   border-radius: 0.5rem;
   padding: 0.75rem;
-  font: var(--paragraph-medium);
+  font: normal 16px/150% var(--font-family);
   color: var(--content-secondary);
   resize: none;
+  width: 100%;
 
   transition: border 300ms ease-in, color 300ms ease-in;
 }
 
-.input:hover, textarea:hover {
+input:hover,
+textarea:hover {
   border: 1px solid var(--border-secondary);
 }
 
-.input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   border: 1px solid var(--border-brand);
   color: var(--content-primary);
   outline: none;
+}
+
+& input::-webkit-calendar-picker-indicator {
+  display: none; /* esconde só o ícone */
 }
 
 /* display */
@@ -116,5 +124,5 @@ a:hover {
 
 /* blur */
 .blur {
-  filter: blur(.3rem);
+  filter: blur(0.3rem);
 }

@@ -50,10 +50,6 @@ main {
 
         outline: none;
       }
-
-      & input[type="date"]::-webkit-calendar-picker-indicator {
-        display: none; /* esconde só o ícone */
-      }
     }
   }
 
