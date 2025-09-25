@@ -80,11 +80,20 @@
   }
 }
 
-@media (width > 80rem){
+@media (width > 70rem) {
   #modal {
     & .modal-content {
       width: 30rem;
       margin-inline: auto;
+
+      & div {
+        display: flex;
+        gap: 1rem;
+
+        & label {
+          width: 100%;
+        }
+      }
     }
   }
 }
