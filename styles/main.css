@@ -26,8 +26,8 @@ main {
 
   & #header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+
     & div:nth-child(2) {
       width: 11.5rem;
       position: relative;
@@ -162,6 +162,8 @@ footer {
 
     & #header {
       display: flex;
+      flex-direction: row;
+      justify-content: space-between;
 
       & p {
         text-wrap: nowrap;

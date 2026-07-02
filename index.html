@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
+    <link rel="shortcut icon" href="./assets/icons/pet-paw.svg" type="image/svg">
     <link rel="stylesheet" href="./styles/index.css" />
   </head>
   <body>
@@ -44,7 +45,7 @@
             <p>09h-12h</p>
           </div>
 
-          <div class="period-appointments">
+          <!-- <div class="period-appointments">
             <div class="appointment">
               <div>
                 <p class="time">13:00</p>
@@ -55,29 +56,14 @@
               <span class="description">Corte de Unhas</span>
               <a>Remover agendamento</a>
             </div>
+          </div> -->
 
-            <div class="appointment">
-              <div>
-                <p class="time">13:00</p>
-                <p class="pet-name">Mel</p>
-                <span>/</span>
-                <span class="person-name">João Souza</span>
-              </div>
-              <span class="description">Corte de Unhas</span>
-              <a>Remover agendamento</a>
-            </div>
-            <div class="appointment">
-              <div>
-                <p class="time">13:00</p>
-                <p class="pet-name">Mel</p>
-                <span>/</span>
-                <span class="person-name">João Souza</span>
-              </div>
-              <span class="description">Corte de Unhas</span>
-              <a>Remover agendamento</a>
-            </div>
+          <div class="no-appointments">
+            <span>Nenhum agendamento.</span>
           </div>
+
         </div>
+
         <div class="afternoon period">
           <div class="period-header">
             <img src="./assets/icons/cloud-sun.svg" alt="sun fog icon" />
@@ -86,17 +72,8 @@
             <p>13h-18h</p>
           </div>
 
-          <div class="period-appointments">
-            <div class="appointment">
-              <div>
-                <p class="time">13:00</p>
-                <p class="pet-name">Mel</p>
-                <span>/</span>
-                <span class="person-name">João Souza</span>
-              </div>
-              <span class="description">Corte de Unhas</span>
-              <a>Remover agendamento</a>
-            </div>
+          <div class="no-appointments">
+            <span>Nenhum agendamento.</span>
           </div>
         </div>
 
@@ -139,6 +116,7 @@
                   type="text"
                   placeholder="Helena Souza"
                   name="tutor-name"
+                  id="tutor-name"
                 />
                 <img src="./assets/icons/user.svg" alt="user icon" />
               </div>
@@ -147,7 +125,7 @@
             <label for="pet-name">
               <p>Nome do pet</p>
               <div>
-                <input type="text" placeholder="Cheddar" name="pet-name" />
+                <input type="text" placeholder="Cheddar" name="pet-name" id="pet-name" />
                 <img src="./assets/icons/pet-paw.svg" alt="dog paw icon" />
               </div>
             </label>
@@ -155,7 +133,7 @@
             <label for="tel">
               <p>Telefone</p>
               <div>
-                <input type="tel" placeholder="(00) 0 0000-0000" name="tel" />
+                <input type="tel" placeholder="(00) 0 0000-0000" name="tel" id="telephone" />
                 <img src="./assets/icons/phone.svg" alt="phone icon" />
               </div>
             </label>
@@ -165,6 +143,7 @@
               <textarea
                 placeholder="Banho e tosa"
                 name="description"
+                id="description"
               ></textarea>
             </label>
 
@@ -172,7 +151,7 @@
               <label for="date">
                 <p>Data</p>
                 <div>
-                  <input type="date" placeholder="10/01/2025" name="date" />
+                  <input type="date" placeholder="10/01/2025" name="date" id="date" />
                   <img src="./assets/icons/calendar.svg" alt="calendar icon" />
                 </div>
               </label>
@@ -180,7 +159,7 @@
               <label for="hour">
                 <p>Hora</p>
                 <div>
-                  <input type="time" placeholder="12:00" name="hour" />
+                  <input type="time" placeholder="12:00" name="hour" id="hour" />
                   <img src="./assets/icons/clock.svg" alt="clock icon" />
                 </div>
               </label>
