@@ -25,14 +25,38 @@ form.addEventListener("submit", (e) => {
   // validando os inputs
   if (inputTutor.value.length < 1) {
     alert("Por favor, preencha o nome do tutor!");
+    return;
   } else if (inputPet.value.length < 1) {
     alert("Por favor, preencha o nome do pet!");
+    return;
   } else if (textarea.value.length < 1) {
     alert("Por favor, coloque a descrição do serviço!");
+    return;
   } else if (inputDate.value.length < 1) {
     alert("Por favor, informe uma data para agendar!");
+    return;
   } else if (inputHour.value.length < 1) {
     alert("Por favor, informe uma hora para agendar!");
+    return;
+  }
+
+  // bloqueando horario fora do funcionamento
+  let hour = Number(inputHour.value.slice(0, 2));
+  if (hour < 9 || hour >= 21) {
+    alert("Não é possível agendar fora do horário de funcionamento.");
+    return;
+  }
+
+  // bloqueando horários já agendados
+  const exists = appointmentsList.some((appointment) => {
+    return (
+      appointment.hour == inputHour.value && appointment.date == inputDate.value
+    );
+  });
+
+  if (exists) {
+    alert("Já existe um agendamento para essa data e horário.");
+    return;
   }
 
   // adicionando dados em um objeto
@@ -41,8 +65,8 @@ form.addEventListener("submit", (e) => {
     pet: inputPet.value,
     description: textarea.value,
     date: inputDate.value,
-    hour: inputHour.value
-  })
+    hour: inputHour.value,
+  });
 
   // criando agendamento com os dados
   const periodAppointments = document.createElement("div");
@@ -76,30 +100,34 @@ form.addEventListener("submit", (e) => {
 
   a.textContent = "Remover agendamento";
 
-  // inserindo na dom
   div.append(time, petName, span, personName);
   appointment.append(div, description, a);
   periodAppointments.append(appointment);
 
   // verificando horário
-  let hour = Number(inputHour.value.slice(0, 2));
-
-  if (hour <= 12) {
-    const noAppointments = document.querySelector(".morning .no-appointments")
-    
-
+  if (hour >= 9 && hour <= 12) {
+    const noAppointments = document.querySelector(".morning .no-appointments");
     morning.append(periodAppointments);
+    noAppointments.style.display = "none";
   } else if (hour <= 18) {
+    const noAppointments = document.querySelector(
+      ".afternoon .no-appointments",
+    );
+
     afternoon.append(periodAppointments);
-  } else if (hour <= 21) {
+
+    noAppointments.style.display = "none";
+  } else if (hour < 21) {
+    const noAppointments = document.querySelector(".night .no-appointments");
+
     night.append(periodAppointments);
+
+    noAppointments.style.display = "none";
   }
 
   // fechando modal
   closeModal();
 });
-
-// exibindo agendamentos na tela
 
 // abrindo modal
 btnOpenModal.addEventListener("click", () => {
@@ -108,21 +136,24 @@ btnOpenModal.addEventListener("click", () => {
 
 // fechando modal
 btnCloseModal.addEventListener("click", () => {
-    closeModal();
+  closeModal();
 });
 
 // funções
-
 function closeModal() {
-    main.classList.remove("blur");
-    footer.classList.remove("blur");
-    modal.classList.add("hidden");
+  main.classList.remove("blur");
+  main.classList.remove("overflow-hidden");
+  footer.classList.remove("blur");
+
+  form.reset();
+
+  modal.classList.add("hidden");
 }
 
 function openModal() {
   main.classList.add("blur");
+  main.classList.add("overflow-hidden");
   footer.classList.add("blur");
   modal.classList.remove("hidden");
+  inputTutor.focus();
 }
-
-console.log(appointmentsList)
